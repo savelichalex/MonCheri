@@ -40,11 +40,5 @@
 		"thumb": "images/64.jpg",
 		"sizes": [36,38,40,42,44],
 		"price": "1000р."
-	},
-	"item8": {
-		"number": 8,
-		"thumb": "images/64.jpg",
-		"sizes": [36,38,40,42,44],
-		"price": "1000р."
 	}
 }
