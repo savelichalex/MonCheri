@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset='UTF-8'>
+	<title>MonCheri</title>
+	<link rel="stylesheet" href="app/static/styles/style.css">
+</head>
+<body>
+	<header>
+		<div class="nav-left">
+			<!-- <a href="#" class="nav-link">Заказать</a> -->
+			<a href="#/" class="nav-link">Каталог</a>
+		</div>
+		<div class="logo"><h1>Mon Cheri</h1><div class="logo-shadow"></div></div>
+		<div class="nav-right">
+			<a href="#" class="nav-link">Контакты</a>
+			<!-- <a href="#" class="nav-link">Ipsum</a> -->
+		</div>
+	</header>
+	<div id="main-wrap" class="main-wrap">
+	</div>
+	<div class="item-modal" id="item-modal">
+	</div>
+	<div class="item-modal-overlay" id="item-modal-overlay"></div>
+
+	<script src="vendor/js/lollipop.js"></script>
+	<script type="text/template" id="items-tpl">
+		{{collection}}
+	</script>
+	<script type="text/template" id="items-partial">
+		<div class="item" data-id="{{id}}">
+			<img src="app/static/images/{{thumb}}" alt="">
+			<p style="float: left">{{sizes}}</p>
+			<span>{{price}} р</span>
+		</div>
+	</script>
+	<script type="text/template" id="items-description">
+		<div class="item-modal__b big-img">
+			<div style="background-image: url('app/static/images/{{thumb}}'); background-size: cover; height: 100%; width: 50%; margin: 0 auto;">
+			</div>
+		</div>
+		<div class="sidebar">
+			<div class="item-modal__b small-imgs">
+				<p>{{description}}</p>
+			</div>
+			<div class="item-modal__b sizes">{{sizes}}</div>
+			<div class="item-modal__b info"><span class="price">Цена:</span><span>{{price}} р</span></div>
+			<button class="confirm">ОТЛОЖИТЬ</button>
+		</div>
+	</script>
+	<script src="app/static/js/index/items.js"></script>
+	<script src="app/static/js/index/router.js"></script>
+	<script src="app/static/js/index/description.js"></script>
+	<script src="vendor/js/cookie.js"></script>
+	<script>Lollipop.Core.startAll();</script>
+</body>
+</html>

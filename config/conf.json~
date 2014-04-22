@@ -1,0 +1,7 @@
+{
+	"name": "MonCheri",
+	"controllers": {
+		"main": "main.js",
+		"admin": "admin.js"
+	}
+}

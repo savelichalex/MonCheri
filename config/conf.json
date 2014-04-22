@@ -1,0 +1,10 @@
+{
+	"name": "MonCheri",
+	"controllers": {
+		"main": "main.js",
+		"admin": "admin.js"
+	},
+	"models": {
+		"model": "model.js"
+	}
+}

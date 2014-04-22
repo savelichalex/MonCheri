@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset='UTF-8'>
+	<title>MonCheri - Admin</title>
+	<link rel="stylesheet" href="app/static/styles/style.css">
+</head>
+<body>
+	<header>
+		<div class="nav-left">
+			<!-- <a href="#" class="nav-link">Заказать</a> -->
+			<a href="/" class="nav-link">Каталог</a>
+		</div>
+		<div class="logo"><h1>Mon Cheri</h1><div class="logo-shadow"></div></div>
+		<div class="nav-right">
+			<a href="#" class="nav-link">Контакты</a>
+			<a href="#" class="nav-link" style="float:right" id="logout">Выйти</a>
+		</div>
+	</header>
+	<ul class="nav-main" id="nav-main">
+		<li class="nav-notactive"><a href="#/change">Редактировать</a></li>
+		<li class="nav-notactive"><a href="#/create">Создать</a></li>
+		<!--<li>Статистика</li>-->
+	</ul>
+	<div id="main-wrap" class="main-wrap">
+	</div>
+	<div class="item-modal" id="item-modal">
+	</div>
+	<div class="item-modal-overlay" id="item-modal-overlay"></div>
+
+	<script src="vendor/js/lollipop.js"></script>
+	<script type="text/template" id="items-tpl">
+		{{collection}}
+	</script>
+	<script type="text/template" id="items-partial">
+		<div class="item-line" data-id="{{id}}">
+			<div class="item-short-info">
+				<span>{{title}}</span>
+				<a href="#/delete/{{id}}" class="delete">Удалить</a>
+			</div>
+			<div id="item-edit-{{id}}" class="item-edit">
+				<div class="item-edit-images">
+					<div class="item-edit-image-hover">
+						<span class="item-edit-new-image">Загрузить новое фото</span>
+					</div>
+					<div style="background-image: url('app/static/images/{{thumb}}');" class="item-edit-image" id="item-edit-image-{{id}}">
+					</div>
+					<input type="file" name="image" id="edit-image-{{id}}">
+				</div>
+				<form>
+					<label for="title">Артикул: </label>
+					<input type="text" name="title" value="{{title}}">
+					<label for="sizes">Размеры: </label>
+					<input type="text" name="sizes" value="{{sizes}}">
+					<label for="price">Цена: </label>
+					<input type="text" name="price" value="{{price}}">
+					<label for="description">Краткое описание: </label>
+					<textarea name="description" cols="30" rows="10">{{description}}</textarea>
+					<input type="submit" value="СОХРАНИТЬ" class="confirm">
+				</form>
+			</div>
+		</div>
+	</script>
+	<script type="text/template" id="item-new">
+		<div class="item-edit" style="height:400px" id="item-new">
+			<div class="item-edit-images">
+				<div class="item-edit-image-hover" id="item-new-image-hover">
+					<span class="item-edit-new-image">Загрузить новое фото</span>
+				</div>
+				<div style="background-image: url('app/static/images/');" class="item-edit-image" id="item-edit-image"> <!-- needed preview -->
+				</div>
+				<input type="file" name="image" id="item-new-image">
+			</div>
+			<form>
+				<label for="title">Артикул: </label>
+				<input type="text" name="title">
+				<label for="sizes">Размеры: </label>
+				<input type="text" name="sizes">
+				<label for="price">Цена: </label>
+				<input type="text" name="price">
+				<label for="description">Краткое описание: </label>
+				<textarea name="description" cols="30" rows="10"></textarea>
+				<input type="submit" value="СОХРАНИТЬ" class="confirm">
+			</form>
+		</div>
+	</script>
+	<script src="app/static/js/admin/items.js"></script>
+	<script src="app/static/js/admin/new_item.js"></script>
+	<script src="app/static/js/admin/nav.js"></script>
+	<script src="app/static/js/admin/router.js"></script>
+	<script src="app/static/js/admin/logout.js"></script>
+	<script src="vendor/js/cookie.js"></script>
+	<script>Lollipop.Core.startAll();</script>
+</body>
+</html>
